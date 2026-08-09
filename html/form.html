@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><b>Internation Modern Hospital- Doctor's Appointment Form</b></h1>
+    <p>Fill in the details below to book your appointment</p>
+
+    <form> 
+        <fieldset>
+            <legend style="text-align:center">
+                <h3>Personal information</h3>
+            </legend>
+        <label for="patient-name">Patient's Name</label>
+        <br>
+        <input type="text" name="patient-name" id="patient-name" placeholder="Enter your full name">
+        <br>
+        <br>
+        <label for="patient-id">Patient ID</label> <br>
+        <input type="password" name="patient-id" id="patient-id" placeholder="Enter private Id"> <br><br>
+        <label for="Birth-Date">Birth Date</label> <br>
+        <input type ="date" name="Birth-Date" id="Birth-Date">
+
+        </fieldset>
+        
+        <br>
+
+        <fieldset>
+            <legend style="text-align:center">
+                <h3>Your visit</h3>
+            </legend>
+
+            <label for="doctor">Choose your doctor</label> <br>
+            <select id="doctor" name="doctor">
+                <option>Select One</option>
+                <option>Dr. Rajpoot</option>
+                <option>Dr. Choudhary</option>
+                <option>Dr.Karmakar</option>
+            </select>
+
+            <p>Why are you visiting?</p>
+            <label>
+                <input type="checkbox" name"reason" id="fever"> Fever
+            </label> <br>
+
+            <label>
+                <input type="checkbox" name"reason" id="cold"> Cold
+            </label> <br>
+
+            <label>
+                <input type="checkbox" name"reason" id="headache"> Headache
+            </label> <br>
+            
+            <label for="notes">Notes for the docotor</label> <br>
+            <textarea name="notes" id="notes" rows="5" cols="40"></textarea>
+        </fieldset>
+
+        <br>
+
+        <input type="submit" value="Book your appointment">
+    </form>
+</body>
+</html>
