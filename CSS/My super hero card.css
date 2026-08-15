@@ -1,0 +1,35 @@
+body{
+background-color:blue;
+}
+.loser{
+    font-style:italic;
+    color:greenyellow;
+    font-size:20px;
+}
+#myfriend{
+    font-style:italic;
+    font-weight:bold;
+    color:red;
+    text-decoration:underline;
+}
+.winner{
+    font-style:italic;
+    color:yellow;
+    font-size:20px;
+    font-weight:bold;
+}
+.lizard{
+    font-style:italic;
+    font-size:20px;
+    color:pink;
+    text-decoration:line-through;
+}
+#Joe{
+    font-style:italic;
+    font-size:20px;
+    color:black;
+    text-transform:uppercase;
+    transform:rotate(10deg);  
+    font-weight:bold;
+    shadow: 2px 2px 5px white;
+}
