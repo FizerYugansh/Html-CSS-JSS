@@ -1,0 +1,89 @@
+body {
+background: linear-gradient(135deg, #0b0f19, #111827);
+color: #f3f4f6;
+text-align: center;
+width: fit-content; 
+  max-width: 480px;               /* Keeps the box compact horizontally */
+  max-height: 480px;              /* NEW: Shuts down vertical expansion to trim top & bottom ends */
+  aspect-ratio: 1/1; 
+  padding: 20px;                  /* Decreased: Pulls the top/bottom borders closer to your text */
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  margin: auto; 
+  box-sizing: border-box;         /* Essential: guarantees padding trims inside the square layout */
+  box-shadow: 
+      inset 0 0 0 2px white, 
+      0 10px 20px rgba(0, 0, 0, 0.7);
+}
+h1 + p {
+background:#FEF3C7;
+padding: 3px;
+border-radius: 8px;
+color: #9A3412;
+display: inline-block;
+}
+.heading {
+  font-size: 200%;   
+  color: #fef3c7;
+  text-shadow: -10px -10px 15px rgba(120, 53, 15, 0.4);
+}
+ul > li {
+list-style-type: none;
+font-size: 15px;
+font-weight: bold;
+color: #5d4037;
+padding: 8px 16px;
+margin: 4px auto;
+width: 260px;
+background: #fff3e0;
+border-radius: 8px;
+cursor: pointer;
+transition: background 0.3s, transform 0.3s;
+}
+ul>li:nth-child(1):hover {
+    background-color: #ffdde1; 
+    color: #c0392b;
+    transform: scale(1.2);
+    font-style:oblique;
+    font-family:Arial,sans-serif;
+    }
+ul>li:nth-child(2):hover {
+    background-color: #ffeaa7; 
+    color: #d35400;
+    transform: scale(1.2);
+    font-style:oblique;
+    font-family:Arial,sans-serif;
+    }
+ul>li:nth-child(3):hover {
+    background-color: #fce4ec; 
+    color: #c2185b;
+    transform: scale(1.2);
+    font-style:oblique;
+    font-family:Arial,sans-serif;
+}
+ul>li:nth-child(4):hover {
+    background-color: #fff9c4; 
+    color: #f57f17;
+    transform: scale(1.2);
+    font-style:oblique;
+    font-family:Arial,sans-serif;
+    }
+ul>li:nth-child(5):hover {
+    background-color: #e0f2f1; 
+    color: #004d40;
+    transform: scale(1.2);
+    font-style:oblique;
+    font-family:Arial,sans-serif;
+    }
+.Description::first-letter {
+font-size: 200%;
+color: #e65c00;
+font-weight: bold;
+
+}
+ul>li:nth-child(4){
+    background-color: #ff0000; 
+    color: #00ffbf;
+    }
+
