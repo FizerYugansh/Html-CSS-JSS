@@ -21,6 +21,78 @@
        h1{
         text-align: center;
        }
+       .alert{
+        text-align: center;
+        position:fixed;
+        left: 0;
+        right:0;
+        top:0;
+        background-color: #2d6a4f;
+        padding: 20px;
+        text-transform: capitalize;
+        font-weight: bold;
+        color: #f1fff0;
+       }
+       .animal{
+      background: #d8f3dc;
+      border: 2px solid #2d6a4f;
+      padding: 10px;
+      margin: 8px 0;
+      width: 220px;
+       }
+       .moved{
+        position: relative;
+        left: 35px;
+        border: 2px solid #2d6a4f;
+        background: #95d5b2;
+        padding: 10px;
+        width:220px;
+       }
+       code{
+        padding: 4px;
+        background: #d8f3dc;
+        color: #1b4332;
+        border-radius: 5px;
+       }
+       .card{
+        position:relative;
+        border: 2px solid #52b788;
+        background: white;
+        border-radius: 10px;
+        text-align: center;
+        text-transform: capitalize;
+        padding: 25px;
+        width: 230px;
+       }
+       .tag{
+        position:absolute;
+        right:-10px;
+        top:-10px;
+        background: #f77f00;
+        color: white;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+       }
+      .zone {
+      position: sticky;
+      top: 50px;
+      background: #2d6a4f;
+      color: white;
+      padding: 10px;
+      margin-top: 25px;
+      font-weight: bold;
+    }
+      .case {
+      background: white;
+      border: 2px solid #52b788;
+      padding: 10px;
+      margin: 8px 0;
+      width: 230px;
+      border-radius: 8px;
+      }
+
        
     </style>
 </head>
@@ -39,7 +111,7 @@
     <h2>Relative Positioning</h2>
     <p>The rescued animal entry moves slightly using <code>left: 35px</code>.</p>
     <div class="animal">Giraffe - Checkup pending</div>
-    <div class="animal moved">Rescued Koala - Safe</div>
+    <div class="moved">Rescued Koala - Safe</div>
     <div class="animal">Zebra - Feeding zone</div>
 
     <h2>Absolute Positioning</h2>
