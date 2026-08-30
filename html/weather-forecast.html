@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My weather app homepage</title>
+    <style>
+        * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+         }
+        body{
+            background-color:#87ceeb;
+            background-image: radial-gradient(circle, white 2px, transparent 3px);
+            background-size:40px 40px;
+            background-repeat:repeat;
+            color:black;
+            text-align: center;
+            background-attachment: fixed;
+            background-position: top center;
+        }
+        h1,h2{
+            color:black;
+        }
+        .comment{
+            color:purple;
+            size: 50px;
+        }
+        .weather-card{
+            width:400px;
+            background-image: linear-gradient(to bottom right, #1e90ff, #87cefa);
+            border: 3px solid white;
+            border-radius: 20px;
+        }
+        .weather-icon{
+            font-size: 70px;
+            animation:floatCloud 3s infinite alternate;
+        }
+        @keyframes floatCloud{
+            from{
+                transform: scaleY(1);
+                transform: translateY(0);
+            }
+            to{
+                transform: scaleY(2);
+                transform: translateY(20px);
+            }
+        }
+        .details{
+            font-size: larger;
+        }
+        .temperature{
+            font-size: larger;
+        }
+        .forecast-section {
+      width: 600px;
+      border: 3px solid white;
+      border-radius: 15px;
+      background-image: radial-gradient(circle, white, #add8e6);
+      color: #003366;
+        }
+
+
+    </style>
+</head>
+<body>
+    <heading>
+        <div class="heading">
+            <h1>My Weather App Homepage</h1>
+            <span class="comment">Check today's weather and plan your day better</span>
+        </div>
+    <div class="weather-card">
+     <h2>Today's Weather</h2>
+ 
+     <div class="weather-icon">Cloud</div>
+ 
+         <p id="temperature">28°C</p>
+ 
+         <p class="details">City: Bengaluru</p>
+         <p class="details">Condition: Partly Cloudy</p>
+         <p class="details">Humidity: 62%</p>
+         <p class="details">Wind Speed: 12 km/h</p>
+  </div>
+   <h2>Weekly Forecast</h2>
+ 
+  <div class="forecast-section">
+    <h3 class="forecast-title">Next 5 Days</h3>
+ 
+    <p class="day">Monday: Sunny - 30°C</p>
+    <p class="day">Tuesday: Cloudy - 27°C</p>
+    <p class="day">Wednesday: Rainy - 24°C</p>
+    <p class="day">Thursday: Windy - 26°C</p>
+    <p class="day">Friday: Stormy - 23°C</p>
+  </div>
+    </heading>
+</body>
+</html>
