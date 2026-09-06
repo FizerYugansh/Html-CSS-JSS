@@ -4,18 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My restaurant menu card</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0b0f19, #111827);
+            color: #f3f4f6;
+            text-align: center;
+            box-sizing: border-box;
+            border:  2px solid white;
+            margin:auto;
+            width: 680px;
+            height: 680px;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: inset 0 0 0 2px white, 0 10px 20px rgba(0, 0, 0, 0.7);
+        }
+        .header p{
+            font-size: 1.2em;
+            color: #f3f4f6;
+            text-decoration: underline;
+        }
+        .starters,h2:hover{
+            transform:scale(1.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+         h2{
+            color: gold;
+        }
+        hr{
+            border: 1px solid coral;
+        }
+        .offer{
+            font-size: 1.5em;
+            color: #f3f4f6;
+            background-color: #ff4500;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            width: 50%;
+            height: 25px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 3px 3px 2px black;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform:rotate(-2deg);
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 <div class="header">
     <header>
         <h1>My Restaurant Menu Card</h1>
         <p>Fresh food, happy mood!</p>
+        <hr>
     </header>
 </div>
-<br>
-<div>
-
-</div>
+<main>
+    <div class="Starters">
+        <h1>Starters</h1>
+        <h2>Cheesy Garlic Bread</h2>
+        <p>A delicious appetizer made with fresh bread, melted cheese, and aromatic garlic.</p>
+        <h2>Spicy Corn Bites</h2>
+        <p>A flavorful side dish made with fresh corn and a kick of spice.</p>
+    </div>
+    <hr>
+    <div class="Main-Course">
+        <h1>Main Course</h1>
+        <h2>Creamy Pasta</h2>
+        <p>A rich and creamy pasta dish made with fresh ingredients and a touch of indulgence.</p>
+        <h2>Veggie Pizza</h2>
+        <p>A delicious pizza topped with a variety of fresh vegetables and melted cheese.</p>
+    </div>
+    <hr>
+    <p class="offer">Weekend Offer: 20% off!</p>
+</main>
     
 </body>
 </html>
