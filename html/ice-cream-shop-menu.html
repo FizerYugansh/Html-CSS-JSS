@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice-Cream Menu</title>
+    <style>
+        body{
+        font-family: Arial, sans-serif;
+        background-color: #fff4f8;
+        text-align: center;
+        color: #4a2c2a;
+        }
+        h1{
+      color: #d63384;
+      font-size: 36px;
+        }
+        h1+p{
+        color: #8a2be2;
+        font-weight: bold;
+        background-color: #ffe3f1;
+        border-radius: 10px;
+        }
+        .shop-description::first-letter{
+        color: #ff1493;
+        font-weight: bold;
+        font-size: 200%;
+        }
+        .menu-box{
+            border: 3px solid #ff69b4;
+            margin:  20px auto ;
+            padding: 30px;
+            width:420px;
+            background-color:  white;
+            aspect-ratio:1/1;
+            box-sizing: border-box;
+            height: 420px;
+            border-radius: 10px;
+        }
+        ul>li{
+        list-style-type: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: #5d4037;
+        padding: 8px 16px;
+        margin: 4px auto;
+        width: 260px;
+        background: #fff3e0;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+        }
+        ul>li:nth-child(1):hover {
+            transform: scale(1.2);
+            color: black;
+            background-color: brown;
+        }
+        ul>li:nth-child(2):hover {
+            transform: scale(1.2);
+            color: red;
+            background-color: pink;
+        }
+        ul>li:nth-child(3):hover {
+            transform: scale(1.2);
+            color: orange;
+            background-color: yellow;
+        }
+        ul>li:nth-child(4):hover{
+            transform: scale(1.2);
+            background:white;
+            border:1px solid black;
+            color:black;
+        }
+        ul>li:nth-child(5):hover{
+            transform:scale(1.2);
+            background:cyan;
+            color:ghostwhite;
+        }
+        button{
+      background-color: #d63384;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      transition:background 0.3s,transform 0.3s;
+        }
+        button:hover{
+            color: black;
+            background-color: #8a2be2;
+            transform: scale(1.2);
+        }
+
+
+    </style>
+</head>
+<body>
+  <h1>My Ice Cream Shop Menu</h1>
+  <p >Welcome to Scoops of Joy!</p>
+  <p class="shop-description">
+    We serve colourful, creamy, and delicious ice cream flavours.
+  </p>
+  <div class="menu-box">
+    <h2>Today's Ice Cream Flavours</h2>
+    <ul>
+      <li>Chocolate Delight</li>
+      <li>Strawberry Swirl</li>
+      <li>Mango Magic - Today's Special</li>
+      <li>Vanilla Dream</li>
+      <li>Blueberry Blast</li>
+    </ul>
+    <button>Order Now</button>
+  </div>
+</body>
+</html>

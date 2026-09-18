@@ -45,8 +45,7 @@
     .video-caption {
         position: absolute;
         bottom: 160px;
-        left: 470px;
-        transform: translateX(-50%);
+        left: 500px;
         background-color: rgba(0, 0, 0, 0.5);
         color: #fff;
         padding: 5px 10px;
@@ -73,6 +72,24 @@
         flex-direction: column;
         align-items: center;    
     }
+    .card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+.card {
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;    
+}
+.card
 
     </style>
 </head>
@@ -80,7 +97,7 @@
     <header>
         <h1 style="text-align: center;">Aethal & Vine</h1>
         <nav class="navbar">
-            <ul class="nav-links">
+            <ul class="nav-links flex-wrap gap-2 px-3">
                 <li ><a href="contact.html"  class="btn btn-outline-dark rounded-4 px-4 py-2 small">Contact Us</a></li>
                 <li ><a href="rooms.html"  class="btn btn-outline-dark rounded-4 px-4 py-2 small">Rooms</a></li>
                 <li ><a href="amenities.html"  class="btn btn-outline-dark rounded-4 px-4 py-2 small">Amenities</a></li>
@@ -109,31 +126,34 @@
 
         <!-- Side-by-Side Cards Container -->
         <section class="explore-section">
+            
+                
             <div class="cards-grid">
-            <div class="row">
-                <div class="col-md-6">
+            <div class="container">
+            <div class="row justify-content-center">
+                <div class=" col-12 col-md-6 col-lg-4">
                     <div class="card">
                         <div class="card-title" style="text-align: center;">Explore the world of Aethal & Vine</div>
                         <div class="card-body">
-                            <img src="Anthal inside.jpeg" alt="Aethal & Vine Interior" width="400" height="540">
+                            <img src="Anthal inside.jpeg" alt="Aethal & Vine Interior" >
                             <p>Discover the world of Aethal & Vine, where luxury meets nature. Immerse yourself in unique experiences and breathtaking destinations.</p>
                             <a href="discovermore.html" target="_blank" class="discover">Discover More</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class=" col-12 col-md-6 col-lg-4">
                     <div class="card">
                         <div class="card-title" style="text-align: center;">Explore the world of Aethal & Vine</div>
                         <div class="card-body">
-                            <img src="Aethal outside.jpeg" alt="Aethal & Vine Exterior" width="400" height="540">
+                            <img src="Aethal outside.jpeg" alt="Aethal & Vine Exterior" >
                             <p>Discover the world of Aethal & Vine, where luxury meets nature. Immerse yourself in unique experiences and breathtaking destinations.</p>
                             <a href="discovermore.html" target="_blank" class="discover">Discover More</a>
                         </div>
                     </div>
                 </div>
             </div>
-
+            </div>
             </div>
                 
                 <section class="Seasonal Experiences">
