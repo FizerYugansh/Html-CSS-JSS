@@ -32,23 +32,15 @@ img, video {
         color: #252724;
         padding: 50px 20px;
     }
-    .nav-links {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
-    .nav-links li {
-        margin: 0 10px;
-    }
-    .nav-links a {
-        text-decoration: none;
-        color: grey;
-    }
     .navbar {
-        background-color: #f5f1e8;
-        display: flex;
+        background-color: white;
         justify-content: center;
+        display: flex;
+    }
+    header{
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
     .video-container video{
         position: relative;
@@ -116,23 +108,24 @@ img, video {
         max-width: 1100px; /* Makes the video significantly bigger on desktop */
         margin: 0 auto;
 }
-.navbar{
-    position:sticky;
-}
+
+
+
+
 
     </style>
 </head>
 <body>
 <div class="container-fluid p-0">
     <header>
-        <h1 style="text-align: center;">Aethal & Vine</h1>
-        <nav class="navbar">
-            <ul class="nav-links flex-wrap gap-2 px-3">
-                <li ><a href="contact.html"  class="btn btn-outline-dark rounded-4 px-4 py-2 small">Contact Us</a></li>
-                <li ><a href="rooms.html"  class="btn btn-outline-dark rounded-4 px-4 py-2 small">Rooms</a></li>
-                <li ><a href="amenities.html"  class="btn btn-outline-dark rounded-4 px-4 py-2 small">Amenities</a></li>
-                <li ><a href="booking.html" class="btn btn-outline-dark rounded-4 px-4 py-2 small">Booking</a></li>
-                <li ><a href="destination.html"  class="btn btn-outline-dark rounded-4 px-4 py-2 small">Destination</a></li>
+        <nav class="navbar navbar-expand-sm">
+            <a class="navbar-brand" href="#">Aethal & Vine</a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="contact.html" >Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="rooms.html" >Rooms</a></li>
+                <li class="nav-item"><a class="nav-link" href="amenities.html" >Amenities</a></li>
+                <li class="nav-item"><a class="nav-link" href="booking.html" >Booking</a></li>
+                <li class="nav-item"><a class="nav-link" href="destination.html" >Destination</a></li>
             </ul>
         </nav>
     </header>
@@ -382,5 +375,48 @@ privacy, generous space and unrivalled access to extraordinary locations.</p>
 </div>
 </div>
 </div>
+<!-- Interactive Discovery Modal -->
+<div class="modal fade" id="discoverModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle">Luxury Experience</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p id="modalDescription">Loading details...</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+// 1. Wait for the page DOM to fully load
+document.addEventListener("DOMContentLoaded", function () {
+  
+  // 2. Select all "Discover More" buttons on your page
+  const discoverButtons = document.querySelectorAll(".btn-dark, .btn-outline-dark");
+
+  // 3. Initialize the Bootstrap modal object programmatically
+  const targetModal = new bootstrap.Modal(document.getElementById('discoverModal'));
+
+  // 4. Loop through each button to add an interactive click listener
+  discoverButtons.forEach((button, index) => {
+    button.addEventListener("click", function (event) {
+      // Prevent standard button reload action
+      event.preventDefault(); 
+      
+      // Find the closest section title next to the clicked button
+      const sectionHeader = button.closest('div, section')?.querySelector('h2, h3, h5')?.innerText || "Aethal & Vine Exclusive";
+
+      // 5. Update the hidden modal content dynamically using JS
+      document.getElementById("modalTitle").innerText = sectionHeader;
+      document.getElementById("modalDescription").innerText = `Thank you for your interest in ${sectionHeader}. Full booking pipelines, room availability checkers, and custom itinerary options are coming soon in our next development build!`;
+
+      // 6. Show the modal on the user's screen
+      targetModal.show();
+    });
+  });
+});
+</script>
 </body>
 </html>

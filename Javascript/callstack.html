@@ -10,6 +10,8 @@
     <p>In this activity, we will learn how to use the call stack in JavaScript.</p>
     <p>The call stack is a mechanism for an interpreter to keep track of its place in a script that calls multiple functions. It is a stack data structure that stores information about the active subroutines of a computer program.</p>
     <p id="demo"></p>
+    <input type="text" id="demo2" placeholder="Enter your name" >
+    <p id="demo1"></p>
     <script>
         function sum(a,b){
             return a+b;
@@ -18,6 +20,8 @@
             return sum(a,b)/2;
         }
         document.getElementById("demo").innerHTML = average(5, 15);
+        let name=document.getElementById("demo2").value;
+        document.getElementById("demo1").innerHTML=name;
     </script>
 </body>
 </html>
