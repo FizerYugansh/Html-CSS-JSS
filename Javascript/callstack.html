@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call stack Activity</title>
+</head>
+<body>
+    <h1>Call stack Activity</h1>
+    <p>In this activity, we will learn how to use the call stack in JavaScript.</p>
+    <p>The call stack is a mechanism for an interpreter to keep track of its place in a script that calls multiple functions. It is a stack data structure that stores information about the active subroutines of a computer program.</p>
+    <p id="demo"></p>
+    <script>
+        function sum(a,b){
+            return a+b;
+        }
+        function average(a,b){
+            return sum(a,b)/2;
+        }
+        document.getElementById("demo").innerHTML = average(5, 15);
+    </script>
+</body>
+</html>
