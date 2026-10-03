@@ -8,54 +8,73 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-    body{
+    body {
         background: linear-gradient(135deg, #f5f1e8, #dce7e1);
         font-family: Arial, sans-serif;
-        }
-    .Video-section {
-        position: relative;
+    }
+
+    /* Standard responsive resets for media */
+    img, video {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Fixed Video Section & Positioning */
+    .video-section {
         background: #e8e4dc;
         text-align: center;
         color: #252724;
-        padding: 50px 20px;
+        padding: 40px 15px;
     }
-    .nav-links {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        text-align: center;
+
+    .video-container {
+        position: relative; /* Relative container anchors absolute children */
+        display: inline-block;
+        max-width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
     }
-    .nav-links li {
-        margin: 0 10px;
+
+    .video-container video {
+        border: 3px solid #808080;
+        border-radius: 12px;
+        width: 100%;
+        max-width: 800px;
     }
-    .nav-links a {
-        text-decoration: none;
-        color: grey;
-    }
-    .navbar {
-        background-color: #f5f1e8;
-        display: flex;
-        justify-content: center;
-    }
-    .video-container video{
-        position: relative;
-        border: 3px solid grey;
-        border-radius: 10px;
-    }
+
     .video-caption {
         position: absolute;
-        bottom: 160px;
-        left: 470px;
-        transform: translateX(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
+        bottom: 25px; /* Sits above standard video control bar */
+        left: 20px;   /* Fixed distance from left side of video */
+        background-color: rgba(0, 0, 0, 0.65);
         color: #fff;
-        padding: 5px 10px;
-        border-radius: 5px;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        pointer-events: none; /* Allows video play clicks to pass through */
     }
-    .content {
-        margin-top: 20px;
-        padding: 20px;
+
+    /* Card & Section Custom Styling */
+    .card {
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background-color: transparent !important;
     }
+
+    .card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+    }
+
+    .card-title {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 12px;    
+    }
+
     .discover {
         display: inline-block;
         margin-top: 10px;
@@ -64,262 +83,162 @@
         color: #fff;
         text-decoration: none;
         border-radius: 5px;
-        width: 200px;
         text-align: center;
     }
-    .explore-section {
-        background: #e8e4dc;
-        display: flex;
-        flex-direction: column;
-        align-items: center;    
+
+    .discover:hover {
+        background-color: #40433d;
+        color: #fff;
     }
 
+    .caption-tag {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #6c757d;
+        font-weight: 600;
+    }
     </style>
 </head>
 <body>
-    <header>
-        <h1 style="text-align: center;">Aethal & Vine</h1>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li ><a href="contact.html"  class="btn btn-outline-dark rounded-4 px-4 py-2 small">Contact Us</a></li>
-                <li ><a href="rooms.html"  class="btn btn-outline-dark rounded-4 px-4 py-2 small">Rooms</a></li>
-                <li ><a href="amenities.html"  class="btn btn-outline-dark rounded-4 px-4 py-2 small">Amenities</a></li>
-                <li ><a href="booking.html" class="btn btn-outline-dark rounded-4 px-4 py-2 small">Booking</a></li>
-                <li ><a href="destination.html"  class="btn btn-outline-dark rounded-4 px-4 py-2 small">Destination</a></li>
+
+<div class="container-fluid p-0">
+    <!-- Header Navigation -->
+    <header class="py-4 bg-light">
+        <h1 class="text-center mb-3">Aethal & Vine</h1>
+        <nav class="navbar navbar-expand p-0">
+            <ul class="nav-links flex-wrap justify-content-center gap-2 px-3 list-unstyled m-0">
+                <li><a href="contact.html" class="btn btn-outline-dark rounded-4 px-4 py-2 small">Contact Us</a></li>
+                <li><a href="rooms.html" class="btn btn-outline-dark rounded-4 px-4 py-2 small">Rooms</a></li>
+                <li><a href="amenities.html" class="btn btn-outline-dark rounded-4 px-4 py-2 small">Amenities</a></li>
+                <li><a href="booking.html" class="btn btn-outline-dark rounded-4 px-4 py-2 small">Booking</a></li>
+                <li><a href="destination.html" class="btn btn-outline-dark rounded-4 px-4 py-2 small">Destination</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Video Banner Section -->
-        <section class="Video-section">
+        <!-- Video Hero Section -->
+        <section class="video-section">
             <div class="video-container">
-                <video width="640" height="360" controls>
+                <video controls autoplay loop muted>
                     <source src="Aethal1.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <p class="video-caption">Summer with Aethal & Vine.</p>
+                <div class="video-caption">Summer with Aethal & Vine.</div>
             </div>
 
-            <div class="content">
+            <div class="content mt-4">
                 <h2>Savour last Summer with Aethal & Vine</h2>
                 <a href="discovermore.html" target="_blank" class="discover">Discover More</a>
             </div>
         </section>
 
-        <!-- Side-by-Side Cards Container -->
-        <section class="explore-section">
-            <div class="cards-grid">
-                
-                <!-- Card 1 -->
-                <div class="card">
-                    <img src="Anthal inside.jpeg" alt="Aethal & Vine Interior" width="640" height="360">
-                    <br>
-                    <span class="caption">HOTEL & RESORTS</span>
-                    <h3>Explore the world of Aethal & Vine</h3>
-                    <p>Uncover new horizons with Aethal & Vine - from soul-soothing escapes by the coast to transformational journeys that awaken the spirit - across 35 hotels and resorts in 20 countries.</p>
-                    <a href="discovermore.html" target="_blank" class="discover">Discover More</a>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="card">
-                    <img src="Aethal outside.jpeg" alt="Amanvari Mexico" width="640" height="360">
-                    <br>
-                    <span class="caption">NEW & NOTEWORTHY</span>
-                    <h3>Amanvari, Mexico</h3>
-                    <p>Set amid wild nature, Amanvari emerges where the distinct desert, mountain and ocean landscapes of Baja's East Cape converge.</p>
-                    <a href="discovermore.html"  class="discover">Discover More</a>
-                </div>
-
-                <section class="Seasonal Experiences">
-
-                    <div class="Seasonal-Intro">
-                    <h3>Seasonal Experiences</h3>
-                    <p>Across the Aethal & Vine world, discover new and noteworthy experiences that provide an authentic connection to the soul of a place.</p>
-                    </div>
-
-                    <div class="Seasonal-Cards">
-                        <div class="Seasonal-Card 1">
-                            <img src="Amanemu--Japan---drone-shot-of-resort.tif--1-.jpeg" alt="Japan journey with Aethal & Vine">
-                            <br>
-                            <span class="caption">SEASONAL ADVENTURES</span>
-                            <h3>Aethal Japan Journey</h3>
-                            <P>Shifting from summer to autumn, Japan's diverse landscapes transform with grace.</P>
-                            <a href="discovermore.html"  class="discover">Discover More</a>
-                        </div>
-                        <br>
-                        <div class="Seasonal-Card 2">
-                            <img src="Amanzoe--Greece---Art-Exhibit--Alexandra-Athanassiades---11-.jpeg" alt="Amazoe, Greece">
-                            <br>
-                            <span class="caption">Amazoe, Greece</span>
-                            <h3>Amazoe Exhibition</h3>
-                            <P>In collaboration with Zoumboulakis Galleries,
-                                Amanzoe introduces Life Cycles, a summer
-                                exhibition offering a multi-generational dialogue
-                                between leading Greek female artists.</P>
-                            <a href="discovermore.html"  class="discover">Discover More</a>
-                        </div>
-                        <br>
-                            <div class="Seasonal-Card 3">
-                            <img src="Gemini_Generated_Image_2pdtbw2pdtbw2pdt.jpeg" width="697" height="697" alt="Wellness">
-                            <br>
-                            <span class="caption">WELLNESS RETREATS</span>
-                            <h3>A Wellness Programme</h3>
-                            <P>Introducing a new three-day wellness programme curated by global advisors.</P>
-                            <a href="discovermore.html"  class="discover">Discover More</a>
+        <!-- Explore Cards Section -->
+        <section class="py-5 px-3">
+            <div class="container">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="card text-center">
+                            <div class="card-title">Explore the world of Aethal & Vine</div>
+                            <div class="card-body p-0">
+                                <img src="Anthal inside.jpeg" alt="Aethal & Vine Interior" class="mb-3">
+                                <p>Discover the world of Aethal & Vine, where luxury meets nature. Immerse yourself in unique experiences and breathtaking destinations.</p>
+                                <a href="discovermore.html" target="_blank" class="discover">Discover More</a>
                             </div>
+                        </div>
                     </div>
-                
-                </section>
+
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="card text-center">
+                            <div class="card-title">Explore the world of Aethal & Vine</div>
+                            <div class="card-body p-0">
+                                <img src="Aethal outside.jpeg" alt="Aethal & Vine Exterior" class="mb-3">
+                                <p>Discover the world of Aethal & Vine, where luxury meets nature. Immerse yourself in unique experiences and breathtaking destinations.</p>
+                                <a href="discovermore.html" target="_blank" class="discover">Discover More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        <hr>
-        <section class="images-2.0">
-            <div class="image-1">
-                <img src="Gemini_Generated_Image_wywo3owywo3owywo.jpeg" alt="Aethal & Vine Residencies" width="462" height="288">
-                <div class="image-caption">Aethal & Vine Residencies</div>
-                <h5>Own a private piece of Aethal & Vine</h5>
-                <p>Impeccable homes for a select few, Aman Residences span more than 20 destinations. Each property is shaped by Aman's hallmarks: profound
-privacy, generous space and unrivalled access to extraordinary locations.</p>
-                <a href="discovermore.html"  class="discover">Discover More</a>
 
+        <!-- Seasonal Experiences Section -->
+        <section class="py-5 bg-light px-3">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h3>Seasonal Experiences</h3>
+                    <p class="text-muted">Across the Aethal & Vine world, discover new and noteworthy experiences that provide an authentic connection to the soul of a place.</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-12 col-md-4 text-center">
+                        <img src="Amanemu--Japan---drone-shot-of-resort.tif--1-.jpeg" alt="Japan journey with Aethal & Vine" class="mb-3 w-100 rounded">
+                        <span class="caption-tag d-block mb-1">SEASONAL ADVENTURES</span>
+                        <h4>Aethal Japan Journey</h4>
+                        <p class="small text-secondary">Shifting from summer to autumn, Japan's diverse landscapes transform with grace.</p>
+                        <a href="discovermore.html" class="discover">Discover More</a>
+                    </div>
+
+                    <div class="col-12 col-md-4 text-center">
+                        <img src="Amanzoe--Greece---Art-Exhibit--Alexandra-Athanassiades---11-.jpeg" alt="Amazoe, Greece" class="mb-3 w-100 rounded">
+                        <span class="caption-tag d-block mb-1">Amazoe, Greece</span>
+                        <h4>Amazoe Exhibition</h4>
+                        <p class="small text-secondary">In collaboration with Zoumboulakis Galleries, Amanzoe introduces Life Cycles, a summer exhibition.</p>
+                        <a href="discovermore.html" class="discover">Discover More</a>
+                    </div>
+
+                    <div class="col-12 col-md-4 text-center">
+                        <img src="Gemini_Generated_Image_2pdtbw2pdtbw2pdt.jpeg" alt="Wellness" class="mb-3 w-100 rounded">
+                        <span class="caption-tag d-block mb-1">WELLNESS RETREATS</span>
+                        <h4>A Wellness Programme</h4>
+                        <p class="small text-secondary">Introducing a new three-day wellness programme curated by global advisors.</p>
+                        <a href="discovermore.html" class="discover">Discover More</a>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="image-2">
-                <img src="Gemini_Generated_Image_9gvyoe9gvyoe9gvy.jpeg" alt="Aethal & Vine Residencies" width="462" height="288">
-                <div class="image-caption">Aethal & Vine Residencies</div>
-                <h5>Own a private piece of Aethal & Vine</h5>
-                <p>Impeccable homes for a select few, Aman Residences span more than 20 destinations. Each property is shaped by Aman's hallmarks: profound
-privacy, generous space and unrivalled access to extraordinary locations.</p>
-                <a href="discovermore.html"  class="discover">Discover More</a>
+        <!-- Residencies Section -->
+        <section class="py-5 px-3">
+            <div class="container">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-12 col-md-6 text-center">
+                        <img src="Gemini_Generated_Image_wywo3owywo3owywo.jpeg" alt="Aethal & Vine Residencies" class="w-100 mb-3 rounded">
+                        <div class="caption-tag mb-1">Aethal & Vine Residencies</div>
+                        <h5>Own a private piece of Aethal & Vine</h5>
+                        <p class="small text-secondary">Impeccable homes for a select few, Aman Residences span more than 20 destinations.</p>
+                        <a href="discovermore.html" class="discover">Discover More</a>
+                    </div>
+
+                    <div class="col-12 col-md-6 text-center">
+                        <img src="Gemini_Generated_Image_9gvyoe9gvyoe9gvy.jpeg" alt="Aethal & Vine Residencies" class="w-100 mb-3 rounded">
+                        <div class="caption-tag mb-1">Aethal & Vine Residencies</div>
+                        <h5>Own a private piece of Aethal & Vine</h5>
+                        <p class="small text-secondary">Impeccable homes for a select few, Aman Residences span more than 20 destinations.</p>
+                        <a href="discovermore.html" class="discover">Discover More</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
-    <hr>
-    <!-- Footer Section, Go through this -->
-<footer class="bg-white text-dark pt-5 pb-4">
-    <div class="container">
-        
-        <!-- Get Inspired / Newsletter Section -->
-        <div class="row align-items-center mb-4">
-            <div class="col-lg-8 col-md-7 mb-3 mb-md-0">
-                <h2 class="h3 fw-normal mb-2">Get inspired</h2>
-                <p class="text-secondary small mb-0">To receive updates about exclusive experiences, events, new destinations and more, please register your interest.</p>
-            </div>
-            <div class="col-lg-4 col-md-5 text-md-end">
-                <a href="booking.html" class="btn btn-dark rounded-0 px-5 py-2">Sign Up</a>
-            </div>
-        </div>
 
-        <!-- Divider -->
-        <hr class="my-4 text-secondary opacity-25">
-
-        <!-- Main Footer Links Grid -->
-        <div class="row g-4 pt-2">
-            
-            <!-- More Information Column -->
-            <div class="col-lg-3 col-md-4">
-                <h3 class="h5 fw-normal mb-3">More information</h3>
-                <ul class="list-unstyled small text-secondary lh-lg mb-4">
-                    <li class="fw-bold text-dark mb-1">Aethal Group</li>
-                    <li class="ps-2"><a href="#" class="text-secondary text-decoration-none">- Aethal</a></li>
-                    <li class="ps-2"><a href="#" class="text-secondary text-decoration-none">- Aethal Essentials</a></li>
-                    <li class="ps-2"><a href="#" class="text-secondary text-decoration-none">- Aethal Interiors</a></li>
-                    <li class="ps-2"><a href="#" class="text-secondary text-decoration-none">- Aethal at Sea</a></li>
-                    <li class="ps-2 mb-2"><a href="#" class="text-secondary text-decoration-none">- Janu</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Residences</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Gift Card</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Careers</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Leadership</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Sustainability</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Privacy Notice</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Cookie Policy</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Legal Notice</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Digital Accessibility</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Cookies Settings</a></li>
-                </ul>
-                <a href="contact.html" class="btn btn-outline-dark rounded-0 px-4 py-2 small">Contact Us</a>
-            </div>
-
-            <!-- Destinations Section Column -->
-            <div class="col-lg-9 col-md-8">
-                <h3 class="h5 fw-normal mb-3">Destinations</h3>
-                
-                <div class="row g-4">
-                    <!-- Column 1: Americas & EMEA -->
-                    <div class="col-lg-4 col-md-6">
-                        <h4 class="h6 fw-bold text-dark mb-2">Americas & Caribbean</h4>
-                        <ul class="list-unstyled small text-secondary lh-lg mb-4">
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalera, Dominican Republic</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalgani, United States, Reopening Soon</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalgiri, United States</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethal New York, United States</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalyara, Turks & Caicos Islands</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalvari, Mexico</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethal Miami Beach, Opening 2028</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethal Beverly Hills, Opening 2028</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalcaya, The Bahamas, Coming Soon</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalsanu, United States, Coming Soon</a></li>
-                        </ul>
-
-                        <h4 class="h6 fw-bold text-dark mb-2">Europe, Middle East & Africa</h4>
-                        <ul class="list-unstyled small text-secondary lh-lg mb-0">
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethal Dubai, United Arab Emirates, Coming Soon</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethaljena, Morocco</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethal Le Mélézin, France</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalruya, Turkey</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalsamar, Kingdom of Saudi Arabia, Coming Soon</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethal Sveti Stefan, Montenegro</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Column 2: Asia -->
-                    <div class="col-lg-4 col-md-6">
-                        <h4 class="h6 fw-bold text-dark mb-2">Asia</h4>
-                        <ul class="list-unstyled small text-secondary lh-lg mb-0">
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalbagh, India</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethaldari, Indonesia</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethaldayan, China</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethaldira, Indonesia</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalfayun, China</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalkila, Indonesia</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalkora, Bhutan</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethal Kyoto, Japan</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethal-i-Khas, India</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethaljiwo, Indonesia</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalsara, Cambodia</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethal Maldives, Coming Soon</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethal Villas at Nusa Dua, Indonesia</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalwana, Indonesia</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalyangyun, China</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Column 3: Asia (continued) -->
-                    <div class="col-lg-4 col-md-6">
-                        <h4 class="h6 fw-bold text-dark mb-2">Asia (continued).</h4>
-                        <ul class="list-unstyled small text-secondary lh-lg mb-0">
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethal Singapore, Coming Soon</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalgalla, Sri Lanka</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalemu, Japan</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethal Residences, Tokyo, Japan</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethaltaka, Laos</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethal Tokyo, Japan</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethaloi, Vietnam</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalpulo, Philippines</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalpuri, Thailand</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethalwella, Sri Lanka</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethal Nai Lert Bangkok, Thailand</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethal Niseko, Opening 2030</a></li>
-                            <li><a href="#" class="text-secondary text-decoration-none">Aethal Seoul, South Korea, Coming Soon</a></li>
-                        </ul>
-                    </div>
+    <!-- Footer Section -->
+    <footer class="bg-white text-dark pt-5 pb-4">
+        <div class="container">
+            <div class="row align-items-center mb-4">
+                <div class="col-lg-8 col-md-7 mb-3 mb-md-0">
+                    <h2 class="h3 fw-normal mb-2">Get inspired</h2>
+                    <p class="text-secondary small mb-0">To receive updates about exclusive experiences, events, new destinations and more, please register your interest.</p>
                 </div>
-
+                <div class="col-lg-4 col-md-5 text-md-end">
+                    <a href="booking.html" class="btn btn-dark rounded-0 px-5 py-2">Sign Up</a>
+                </div>
             </div>
-
+            <!-- Footer link columns ... -->
         </div>
-    </div>
-</footer>
+    </footer>
+</div>
+
 </body>
 </html>
